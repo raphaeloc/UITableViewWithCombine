@@ -18,14 +18,6 @@ class ViewModel {
     @Published private(set) var viewState = ViewState.loading
     @Published private(set) var items = [Item]()
     
-    var numberOfRows: Int {
-        items.count
-    }
-    
-    func item(at index: Int) -> Item {
-        items[index]
-    }
-    
     func fetch() {
         viewState = .loading
         
@@ -43,3 +35,14 @@ class ViewModel {
         }
     }
 }
+
+extension ViewModel: ListView.DataDelegate {
+    var numberOfRows: Int {
+        items.count
+    }
+    
+    func data(at index: Int) -> Item {
+        items[index]
+    }
+}
+

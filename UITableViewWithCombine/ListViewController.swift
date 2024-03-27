@@ -24,7 +24,7 @@ class ListViewController: UIViewController {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        nil
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -55,7 +55,7 @@ class ListViewController: UIViewController {
                 switch viewState {
                 case .data:
                     guard !view.isKind(of: ListView.self) else { return }
-                    self.view = ListView(delegate: self)
+                    self.view = ListView(delegate: self.viewModel)
                 case .loading:
                     guard !view.isKind(of: LoadingView.self) else { return }
                     self.view = LoadingView()
@@ -67,12 +67,3 @@ class ListViewController: UIViewController {
     }
 }
 
-extension ListViewController: ListView.DataDelegate {
-    var numberOfRows: Int {
-        viewModel.numberOfRows
-    }
-    
-    func data(at index: Int) -> Item {
-        return viewModel.item(at: index)
-    }
-}
