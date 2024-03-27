@@ -20,6 +20,7 @@
 		AECED4072BB3A1B000B40013 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECED4062BB3A1B000B40013 /* ErrorView.swift */; };
 		AED8AD3F2BB3A9AB004B514E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED8AD3D2BB3A9AB004B514E /* AppDelegate.swift */; };
 		AED8AD402BB3A9AB004B514E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED8AD3E2BB3A9AB004B514E /* SceneDelegate.swift */; };
+		AED8AD4A2BB3AAF8004B514E /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED8AD492BB3AAF8004B514E /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		AECED4062BB3A1B000B40013 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		AED8AD3D2BB3A9AB004B514E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AED8AD3E2BB3A9AB004B514E /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		AED8AD492BB3AAF8004B514E /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				AECED3F82BB39BE100B40013 /* ViewModel.swift */,
 				AECED3F32BB39BE100B40013 /* ListView.swift */,
 				AECED3F22BB39BE100B40013 /* ListViewController.swift */,
+				AED8AD492BB3AAF8004B514E /* Service.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				AECED3FD2BB39BE100B40013 /* ListView.swift in Sources */,
 				AECED4072BB3A1B000B40013 /* ErrorView.swift in Sources */,
 				AECED3FE2BB39BE100B40013 /* LoadingView.swift in Sources */,
+				AED8AD4A2BB3AAF8004B514E /* Service.swift in Sources */,
 				AECED4022BB39BE100B40013 /* TableViewCell.swift in Sources */,
 				AED8AD402BB3A9AB004B514E /* SceneDelegate.swift in Sources */,
 			);

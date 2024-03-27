@@ -33,7 +33,9 @@ class ListViewController: UIViewController {
     // MARK: - Life cycle
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel.fetch()
+        Task {
+            await viewModel.fetch()
+        }
     }
     
     // MARK: - Setup methods

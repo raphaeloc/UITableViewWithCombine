@@ -20,25 +20,26 @@ class ViewModel {
     @Published private(set) var viewState = ViewState.loading
     @Published private(set) var items = [Item]()
     
+    // MARK: - Variables & Constants
+    let service = Service()
+    
     // MARK: - Methods
-    func fetch() {
+    func fetch() async {
         viewState = .loading
         
-        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
-            guard let path = Bundle.main.path(forResource: "items", ofType: "json") else {
-                self.viewState = .error
-                return
-            }
-            
+        let result = await service.fetchItems()
+        switch result {
+        case .success(let data):
             do {
-                let url = URL(fileURLWithPath: path)
-                let data = try Data(contentsOf: url)
                 let object = try JSONDecoder().decode([Item].self, from: data)
                 self.items = object
                 self.viewState = .data
             } catch {
                 self.viewState = .error
             }
+        case .failure(let failure):
+            dump("ERROR ON FETCH: \(failure)")
+            self.viewState = .error
         }
     }
 }
@@ -56,7 +57,9 @@ extension ViewModel: ListView.DataDelegate {
 
 // MARK: - ErrorView.Delegate
 extension ViewModel: ErrorView.Delegate {
-    func didTapOnTryAgainButton() {
-        fetch()
+    func didTapOnTryAgainButton()  {
+        Task {
+            await fetch()
+        }
     }
 }
