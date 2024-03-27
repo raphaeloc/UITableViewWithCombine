@@ -10,16 +10,16 @@
 		AECED3E52BB39BD100B40013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AECED3E42BB39BD100B40013 /* Assets.xcassets */; };
 		AECED3E82BB39BD100B40013 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = AECED3E72BB39BD100B40013 /* Base */; };
 		AECED3FA2BB39BE100B40013 /* UIView+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECED3EF2BB39BE100B40013 /* UIView+Identifier.swift */; };
-		AECED3FB2BB39BE100B40013 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECED3F12BB39BE100B40013 /* AppDelegate.swift */; };
 		AECED3FC2BB39BE100B40013 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECED3F22BB39BE100B40013 /* ListViewController.swift */; };
 		AECED3FD2BB39BE100B40013 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECED3F32BB39BE100B40013 /* ListView.swift */; };
 		AECED3FE2BB39BE100B40013 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECED3F42BB39BE100B40013 /* LoadingView.swift */; };
 		AECED3FF2BB39BE100B40013 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECED3F52BB39BE100B40013 /* Item.swift */; };
-		AECED4002BB39BE100B40013 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECED3F72BB39BE100B40013 /* SceneDelegate.swift */; };
 		AECED4012BB39BE100B40013 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECED3F82BB39BE100B40013 /* ViewModel.swift */; };
 		AECED4022BB39BE100B40013 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECED3F92BB39BE100B40013 /* TableViewCell.swift */; };
 		AECED4052BB3A0AB00B40013 /* items.json in Resources */ = {isa = PBXBuildFile; fileRef = AECED4042BB3A0AB00B40013 /* items.json */; };
 		AECED4072BB3A1B000B40013 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECED4062BB3A1B000B40013 /* ErrorView.swift */; };
+		AED8AD3F2BB3A9AB004B514E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED8AD3D2BB3A9AB004B514E /* AppDelegate.swift */; };
+		AED8AD402BB3A9AB004B514E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED8AD3E2BB3A9AB004B514E /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,16 +28,16 @@
 		AECED3E72BB39BD100B40013 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AECED3E92BB39BD100B40013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AECED3EF2BB39BE100B40013 /* UIView+Identifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Identifier.swift"; sourceTree = "<group>"; };
-		AECED3F12BB39BE100B40013 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../../UIKitListWithCombine/AppDelegate.swift; sourceTree = "<group>"; };
 		AECED3F22BB39BE100B40013 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		AECED3F32BB39BE100B40013 /* ListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		AECED3F42BB39BE100B40013 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		AECED3F52BB39BE100B40013 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		AECED3F72BB39BE100B40013 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = ../../UIKitListWithCombine/SceneDelegate.swift; sourceTree = "<group>"; };
 		AECED3F82BB39BE100B40013 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		AECED3F92BB39BE100B40013 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		AECED4042BB3A0AB00B40013 /* items.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = items.json; sourceTree = "<group>"; };
 		AECED4062BB3A1B000B40013 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		AED8AD3D2BB3A9AB004B514E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AED8AD3E2BB3A9AB004B514E /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +73,8 @@
 				AECED4032BB3A09100B40013 /* Resources */,
 				AECED3F02BB39BE100B40013 /* Extensions */,
 				AECED3F62BB39BE100B40013 /* Model */,
-				AECED3F12BB39BE100B40013 /* AppDelegate.swift */,
-				AECED3F72BB39BE100B40013 /* SceneDelegate.swift */,
+				AED8AD3D2BB3A9AB004B514E /* AppDelegate.swift */,
+				AED8AD3E2BB3A9AB004B514E /* SceneDelegate.swift */,
 				AECED3F32BB39BE100B40013 /* ListView.swift */,
 				AECED4062BB3A1B000B40013 /* ErrorView.swift */,
 				AECED3F42BB39BE100B40013 /* LoadingView.swift */,
@@ -183,16 +183,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AED8AD3F2BB3A9AB004B514E /* AppDelegate.swift in Sources */,
 				AECED3FF2BB39BE100B40013 /* Item.swift in Sources */,
 				AECED3FA2BB39BE100B40013 /* UIView+Identifier.swift in Sources */,
 				AECED4012BB39BE100B40013 /* ViewModel.swift in Sources */,
 				AECED3FC2BB39BE100B40013 /* ListViewController.swift in Sources */,
 				AECED3FD2BB39BE100B40013 /* ListView.swift in Sources */,
 				AECED4072BB3A1B000B40013 /* ErrorView.swift in Sources */,
-				AECED4002BB39BE100B40013 /* SceneDelegate.swift in Sources */,
 				AECED3FE2BB39BE100B40013 /* LoadingView.swift in Sources */,
 				AECED4022BB39BE100B40013 /* TableViewCell.swift in Sources */,
-				AECED3FB2BB39BE100B40013 /* AppDelegate.swift in Sources */,
+				AED8AD402BB3A9AB004B514E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
