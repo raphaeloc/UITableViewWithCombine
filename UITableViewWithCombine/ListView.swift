@@ -9,11 +9,13 @@ import UIKit
 
 class ListView: UIView {
     
+    // MARK: - Inner Protocols
     protocol DataDelegate: AnyObject {
         var numberOfRows: Int { get }
         func data(at index: Int) -> Item
     }
 
+    // MARK: - Components
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -24,8 +26,10 @@ class ListView: UIView {
         return tableView
     }()
     
+    // MARK: - Variables & Constants
     weak var delegate: DataDelegate!
     
+    // MARK: - Initializers
     init(delegate: DataDelegate) {
         self.delegate = delegate
         super.init(frame: .zero)
@@ -45,7 +49,10 @@ class ListView: UIView {
     private func setupViews() {
         backgroundColor = .white
         addSubview(tableView)
-        tableView.register(TableViewCell.self, forCellReuseIdentifier: TableViewCell.identifier)
+        tableView.register(
+            TableViewCell.self,
+            forCellReuseIdentifier: TableViewCell.identifier
+        )
     }
     
     private func setupConstraints() {
@@ -65,14 +72,18 @@ class ListView: UIView {
     }
 }
 
+// MARK: - TableView DataSource & Delegate
 extension ListView: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         delegate.numberOfRows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.identifier, for: indexPath) as? TableViewCell else {
-            fatalError()
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: TableViewCell.identifier,
+            for: indexPath
+        ) as? TableViewCell else {
+            fatalError("The unique cell type should be kind of \(TableViewCell.identifier)")
         }
         
         cell.setup(item: delegate.data(at: indexPath.row))
@@ -83,5 +94,9 @@ extension ListView: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         dump("ITEM -> \(delegate.data(at: indexPath.row))")
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        80
     }
 }

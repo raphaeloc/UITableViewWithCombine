@@ -22,7 +22,6 @@ class TableViewCell: UITableViewCell {
         stackView.distribution = .fillProportionally
         stackView.alignment = .center
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.heightAnchor.constraint(equalToConstant: 80).isActive = true
         stackView.isLayoutMarginsRelativeArrangement = true
         stackView.layoutMargins = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         
@@ -58,18 +57,25 @@ class TableViewCell: UITableViewCell {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
+        label.font = .boldSystemFont(ofSize: 18)
         
         return label
     }()
     
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
+        label.font = .systemFont(ofSize: 16, weight: .light)
         
         return label
     }()
     
     private lazy var chevronIconImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(systemName: "chevron.right", withConfiguration: UIImage.SymbolConfiguration(weight: .light)))
+        let imageView = UIImageView(
+            image: UIImage(
+                systemName: "chevron.right",
+                withConfiguration: UIImage.SymbolConfiguration(weight: .light)
+            )
+        )
         imageView.heightAnchor.constraint(equalToConstant: 20).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: 20).isActive = true
         

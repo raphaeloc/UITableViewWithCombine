@@ -1,0 +1,32 @@
+[
+    {
+        "icon": "message.fill",
+        "title": "Messages",
+        "description": "Chat with friends"
+    },
+    {
+        "icon": "person.fill",
+        "title": "Profile",
+        "description": "View your profile"
+    },
+    {
+        "icon": "gearshape.fill",
+        "title": "Settings",
+        "description": "Customize your preferences"
+    },
+    {
+        "icon": "paperplane.fill",
+        "title": "Send",
+        "description": "Send messages"
+    },
+    {
+        "icon": "bell.fill",
+        "title": "Notifications",
+        "description": "Manage your notifications"
+    },
+    {
+        "icon": "house.fill",
+        "title": "Home",
+        "description": "Go back to the home page"
+    }
+]

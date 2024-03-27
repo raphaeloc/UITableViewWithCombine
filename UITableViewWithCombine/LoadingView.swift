@@ -9,6 +9,7 @@ import UIKit
 
 class LoadingView: UIView {
 
+    // MARK: - Components
     private(set) lazy var activityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView(style: .large)
         activityIndicator.startAnimating()
@@ -17,6 +18,7 @@ class LoadingView: UIView {
         return activityIndicator
     }()
     
+    // MARK: - Initializers
     init() {
         super.init(frame: .zero)
         setup()
@@ -26,6 +28,7 @@ class LoadingView: UIView {
         nil
     }
     
+    // MARK: - Setup methods
     private func setup() {
         setupViews()
         setupConstraints()

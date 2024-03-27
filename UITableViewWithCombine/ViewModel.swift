@@ -9,33 +9,41 @@ import Foundation
 import Combine
 
 class ViewModel {
+    // MARK: - Inner enum
     enum ViewState {
         case data
         case loading
-        case noData
+        case error
     }
     
+    // MARK: - Publishers
     @Published private(set) var viewState = ViewState.loading
     @Published private(set) var items = [Item]()
     
+    // MARK: - Methods
     func fetch() {
         viewState = .loading
         
         Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
-            self.items = [
-                Item(icon: "message.fill", title: "Messages", description: "Chat with friends"),
-                Item(icon: "person.fill", title: "Profile", description: "View your profile"),
-                Item(icon: "gearshape.fill", title: "Settings", description: "Customize your preferences"),
-                Item(icon: "paperplane.fill", title: "Send", description: "Send messages"),
-                Item(icon: "bell.fill", title: "Notifications", description: "Manage your notifications"),
-                Item(icon: "house.fill", title: "Home", description: "Go back to the home page")
-            ]
+            guard let path = Bundle.main.path(forResource: "items", ofType: "json") else {
+                self.viewState = .error
+                return
+            }
             
-            self.viewState = .data
+            do {
+                let url = URL(fileURLWithPath: path)
+                let data = try Data(contentsOf: url)
+                let object = try JSONDecoder().decode([Item].self, from: data)
+                self.items = object
+                self.viewState = .data
+            } catch {
+                self.viewState = .error
+            }
         }
     }
 }
 
+// MARK: - ListView.DataDelegate
 extension ViewModel: ListView.DataDelegate {
     var numberOfRows: Int {
         items.count
@@ -46,3 +54,9 @@ extension ViewModel: ListView.DataDelegate {
     }
 }
 
+// MARK: - ErrorView.Delegate
+extension ViewModel: ErrorView.Delegate {
+    func didTapOnTryAgainButton() {
+        fetch()
+    }
+}

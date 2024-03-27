@@ -10,30 +10,34 @@ import Combine
 
 class ListViewController: UIViewController {
     
+    // MARK: - Variables & Constants
     let viewModel = ViewModel()
     
     var cancellables = Set<AnyCancellable>()
     
+    // MARK: - Initializers
     init() {
         super.init(nibName: nil, bundle: nil)
         setup()
-    }
-    
-    deinit {
-        cancellables.forEach { $0.cancel() }
     }
     
     required init?(coder: NSCoder) {
         nil
     }
     
+    // MARK: - Deinitializer
+    deinit {
+        cancellables.forEach { $0.cancel() }
+    }
+    
+    // MARK: - Life cycle
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         viewModel.fetch()
     }
     
+    // MARK: - Setup methods
     private func setup() {
-        view.backgroundColor = .white
         setupBinding()
     }
     
@@ -51,19 +55,23 @@ class ListViewController: UIViewController {
                 guard let `self` = self else {
                     return
                 }
-                
-                switch viewState {
-                case .data:
-                    guard !view.isKind(of: ListView.self) else { return }
-                    self.view = ListView(delegate: self.viewModel)
-                case .loading:
-                    guard !view.isKind(of: LoadingView.self) else { return }
-                    self.view = LoadingView()
-                case .noData:
-                    self.view.backgroundColor = .red
-                }
+                handle(viewState)
             }
             .store(in: &cancellables)
     }
+    
+    // MARK: - Binding methods
+    func handle(_ viewState: ViewModel.ViewState) {
+        switch viewState {
+        case .data:
+            guard !view.isKind(of: ListView.self) else { return }
+            self.view = ListView(delegate: self.viewModel)
+        case .loading:
+            guard !view.isKind(of: LoadingView.self) else { return }
+            self.view = LoadingView()
+        case .error:
+            guard !view.isKind(of: ErrorView.self) else { return }
+            self.view = ErrorView(delegate: self.viewModel)
+        }
+    }
 }
-
