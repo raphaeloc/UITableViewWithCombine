@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(windowScene: windowScene)
         
-        let vc = ListViewController()
+        let vc = ListViewControllerContainer()
         
         window?.rootViewController = vc
         window?.makeKeyAndVisible()

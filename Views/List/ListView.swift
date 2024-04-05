@@ -26,7 +26,7 @@ class ListView: UIView {
         return tableView
     }()
     
-    // MARK: - Variables & Constants
+    // MARK: - Properties
     weak var delegate: DataDelegate!
     
     // MARK: - Initializers

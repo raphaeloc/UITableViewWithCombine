@@ -70,7 +70,7 @@ class ErrorView: UIView {
         return button
     }()
     
-    // MARK: - Variables & Constants
+    // MARK: - Properties
     weak var delegate: ErrorView.Delegate!
     
     // MARK: - Initializers
